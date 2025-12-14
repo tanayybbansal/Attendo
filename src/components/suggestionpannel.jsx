@@ -17,8 +17,8 @@ export default function SuggestionPanel({ subjects }) {
     return { ...sub, percent };
   });
 
-  // 2️⃣ Sort by lowest attendance first
-  const sortedSubjects = subjectsWithPercent.sort(
+  // 2️⃣ Sort by lowest attendance first (spread to avoid mutating original array)
+  const sortedSubjects = [...subjectsWithPercent].sort(
     (a, b) => a.percent - b.percent
   );
 
@@ -39,7 +39,7 @@ export default function SuggestionPanel({ subjects }) {
         {prioritySubjects.map((sub, index) => (
           <li
             key={index}
-            className="bg-red-100 p-3 rounded-xl text-red-700 font-medium"
+            className="bg-red-100 p-3 rounded-xl text-red-700 text-sm font-medium"
           >
             {index + 1}. <b>{sub.name}</b> ({sub.percent.toFixed(1)}%)
           </li>

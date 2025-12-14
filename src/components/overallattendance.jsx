@@ -74,9 +74,8 @@ export default function OverallAttendance({ subjects }) {
       {/* <p className={`mt-2 font-semibold ${riskColor}`}>{riskLabel}</p> */}
 
       <p
-        className={`mt-3 font-medium ${
-          value < 75 ? "text-red-600" : "text-green-600"
-        }`}
+        className={`mt-3 font-medium ${value < 75 ? "text-red-600" : "text-green-600"
+          }`}
       >
         {value >= 75
           ? "Eligible in all subjects"
